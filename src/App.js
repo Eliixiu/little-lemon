@@ -1,51 +1,66 @@
 import logoImg from "./img/logo.svg";
+import restaurantChefbImg from "./img/restaurant_chefB.jpg";
+import greekSaladImg from "./img/greek_salad.jpg";
+import bruchettaImg from "./img/bruchetta.jpg";
+import lemonDessertImg from "./img/lemon_dessert.jpg";
+import customer1Img from "./img/customer1.jpg";
+import customer2Img from "./img/customer2.jpg";
+import customer3Img from "./img/customer3.jpg";
+import customer4Img from "./img/customer4.jpg";
+import restaurantChefsImg from "./img/Mario_and_Adrian A.jpg";
 import restaurantFoodImg from "./img/restaurant_food.jpg";
+
 import "./App.css";
 
 function Nav() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#menu">Menu</a>
-        </li>
-        <li>
-          <a href="#reservations">Reservation</a>
-        </li>
-        <li>
-          <a href="#orderonline">Order online</a>
-        </li>
-        <li>
-          <a href="#login">Login</a>
-        </li>
-      </ul>
-    </nav>
+    <div className="nav-content">
+      <img src={logoImg} alt="Little Lemon Logo" className="logo" />
+      <nav className="nav">
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#menu">Menu</a>
+          </li>
+          <li>
+            <a href="#reservations">Reservation</a>
+          </li>
+          <li>
+            <a href="#orderonline">Order online</a>
+          </li>
+          <li>
+            <a href="#login">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
 
 function Header() {
   return (
     <header>
-      <img src={logoImg} alt="Little Lemon Logo" className="logo" />
-      <Nav />
       <div className="header-content">
-        <h1>Little Lemon</h1>
-        <p>Chicago</p>
-        <p>
-          We are a family owned Mediterranean restaurant, focused on traditional
-          recipes served with a modern twist.
-        </p>
-        <button className="reserve-btn">Reserve a Table</button>
+        <div className="header-content-text">
+          <h1>Little Lemon</h1>
+          <p>Chicago</p>
+          <p>
+            We are a family owned Mediterranean restaurant, focused on
+            traditional recipes served with a modern twist.
+          </p>
+          <p>
+            <button className="reserve-btn">Reserve a Table</button>
+          </p>
+        </div>
         <img
-          src={logoImg}
-          alt="A photo of Little Lemon restaurant's food"
-          className="restaurant-img"
+          src={restaurantChefbImg}
+          alt="A photo of one of Little Lemon restaurant's chef"
+          className="restaurant-chefb"
         />
       </div>
     </header>
@@ -82,7 +97,7 @@ function Main() {
         <button className="onlinemenu-btn">Online Menu</button>
         <div className="menu-section">
           <MenuItem
-            img={logoImg}
+            img={greekSaladImg}
             alt=""
             title="Greek Salad"
             description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
@@ -92,7 +107,7 @@ function Main() {
             price={12.99}
           />
           <MenuItem
-            img={logoImg}
+            img={bruchettaImg}
             alt=""
             title="Bruchetta"
             description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
@@ -102,14 +117,14 @@ function Main() {
             price={5.99}
           />
           <MenuItem
-            img={logoImg}
+            img={lemonDessertImg}
             alt=""
             title="Lemon Dessert"
             description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
               excepturi cupiditate? A itaque incidunt, quaerat omnis, nihil
               error sapiente nobis distinctio, accusantium numquam modi?
               Assumenda ipsam quis aliquid tempora molestiae."
-            price={5.0}
+            price={4.99}
           />
         </div>
       </section>
@@ -119,25 +134,25 @@ function Main() {
           <TestimonialsItem
             rating="Rating"
             name="Name"
-            img={logoImg}
+            img={customer1Img}
             text="Reviewtext"
           />
           <TestimonialsItem
             rating="Rating"
             name="Name"
-            img={logoImg}
+            img={customer2Img}
             text="Reviewtext"
           />
           <TestimonialsItem
             rating="Rating"
             name="Name"
-            img={logoImg}
+            img={customer3Img}
             text="Reviewtext"
           />
           <TestimonialsItem
             rating="Rating"
             name="Name"
-            img={logoImg}
+            img={customer4Img}
             text="Reviewtext"
           />
         </div>
@@ -151,14 +166,9 @@ function Main() {
           odio saepe, ea autem natus doloremque esse fuga ullam eveniet porro.
         </p>
         <img
-          src={logoImg}
-          alt="A photo of Little Lemon restaurant's food"
-          className="restaurant-img"
-        />
-        <img
-          src={logoImg}
-          alt="A photo of Little Lemon restaurant's food"
-          className="restaurant-img"
+          src={restaurantChefsImg}
+          alt="A photo of Little Lemon restaurant's chefs"
+          className="restaurantchefs-img"
         />
       </section>
     </main>
@@ -184,6 +194,11 @@ function Footer() {
   return (
     <footer>
       <div className="footer-nav-container">
+        <img
+          src={restaurantFoodImg}
+          alt="A photo of Little Lemon restaurant's food"
+          className="restaurantfood-img"
+        />
         <FooterItem
           title="Doormat Navigation"
           list={[
@@ -220,6 +235,7 @@ function Footer() {
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Header />
       <Main />
       <Footer />

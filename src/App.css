@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: "Markazi Text", serif;
+  background-color: #edefee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 10px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  height: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li {
+  list-style-type: none;
+  margin-right: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: medium;
+  color: #333333;
+}
+
+.header-content {
+  background-color: #495e57;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 10px 0;
+}
+
+.header-content-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-section {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu-item {
+  flex: 1;
+}
+
+.testimonials-section {
+  background-color: #f4ce14;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.testimonials-item {
+  flex: 1;
+}
+
+.footer-nav-container {
+  background-color: #495e57;
+  color: #edefee;
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  height: 100px;
 }
