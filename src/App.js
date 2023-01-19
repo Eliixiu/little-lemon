@@ -232,13 +232,68 @@ function Footer() {
   );
 }
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
+    <div>
       <Nav />
       <Header />
       <Main />
       <Footer />
+    </div>
+  );
+}
+
+function BookingPage() {
+  return (
+    <div>
+      <form className="booking-form">
+        <label for="res-date">Choose date</label>
+        <input type="date" id="res-date" />
+        <label for="res-time">Choose time</label>
+        <select id="res-time ">
+          <option>17:00</option>
+          <option>18:00</option>
+          <option>19:00</option>
+          <option>20:00</option>
+          <option>21:00</option>
+          <option>22:00</option>
+        </select>
+        <label for="guests">Number of guests</label>
+        <input type="number" placeholder="1" min="1" max="10" id="guests" />
+        <label for="occasion">Occasion</label>
+        <select id="occasion">
+          <option>Birthday</option>
+          <option>Anniversary</option>
+        </select>
+        <input type="submit" value="Make Your reservation" />
+      </form>
+    </div>
+  );
+}
+
+function ConfirmationPage() {
+  return (
+    <div className="confimation-form">
+      <h1>Reservation Confirmed</h1>
+      <p>
+        Thank you for your reservation at Little Lemon. We look forward to
+        serving you.
+      </p>
+      <p>Date: {/* insert date here */}</p>
+      <p>Time: {/* insert time here */}</p>
+      <p>Number of guests: {/* insert number of guests here */}</p>
+      <p>Occasion: {/* insert occasion here */}</p>
+      <button>Home</button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <HomePage />
+      <BookingPage />
+      <ConfirmationPage />
     </div>
   );
 }
