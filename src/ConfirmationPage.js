@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ConfirmationPage.css";
 
 export default function ConfirmationPage() {
@@ -12,7 +13,9 @@ export default function ConfirmationPage() {
       <p>Time: {/* insert time here */}</p>
       <p>Number of guests: {/* insert number of guests here */}</p>
       <p>Occasion: {/* insert occasion here */}</p>
-      <button>Home</button>
+      <button>
+        <Link to="/">Home</Link>
+      </button>
     </div>
   );
 }

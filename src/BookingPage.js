@@ -1,9 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import "./BookingPage.css";
 
 export default function BookingPage() {
+  const navigate = useNavigate();
+
   return (
     <div>
-      <form className="booking-form">
+      <form
+        className="booking-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          navigate("/confirmation");
+        }}
+      >
         <label for="res-date">Choose date</label>
         <input type="date" id="res-date" />
         <label for="res-time">Choose time</label>

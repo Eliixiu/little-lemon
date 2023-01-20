@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import logoImg from "./img/logo.svg";
 import restaurantChefbImg from "./img/restaurant_chefB.jpg";
 import greekSaladImg from "./img/greek_salad.jpg";
@@ -43,6 +44,8 @@ function Nav() {
 }
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <header>
       <div className="header-content">
@@ -54,7 +57,14 @@ function Header() {
             traditional recipes served with a modern twist.
           </p>
           <p>
-            <button className="reserve-btn">Reserve a Table</button>
+            <button
+              onClick={() => {
+                navigate("/booking");
+              }}
+              className="reserve-btn"
+            >
+              Reserve a Table
+            </button>
           </p>
         </div>
         <img
