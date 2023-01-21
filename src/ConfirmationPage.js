@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./ConfirmationPage.css";
 
 export default function ConfirmationPage() {
+  const search = useLocation().search;
+  const params = new URLSearchParams(search);
+
   return (
     <div className="confimation-form">
       <h1>Reservation Confirmed</h1>
@@ -9,10 +12,10 @@ export default function ConfirmationPage() {
         Thank you for your reservation at Little Lemon. We look forward to
         serving you.
       </p>
-      <p>Date: {/* insert date here */}</p>
-      <p>Time: {/* insert time here */}</p>
-      <p>Number of guests: {/* insert number of guests here */}</p>
-      <p>Occasion: {/* insert occasion here */}</p>
+      <p>Date: {params.get("date")}</p>
+      <p>Time: {params.get("time")}</p>
+      <p>Number of guests: {params.get("numberOfGuests")}</p>
+      <p>Occasion: {params.get("occasion")}</p>
       <button>
         <Link to="/">Home</Link>
       </button>
