@@ -10,3 +10,13 @@ body {
   gap: 20px;
   margin: 0 auto;
 }
+
+.bookingpage-imgs {
+  text-align: center;
+}
+
+.bookingpage-imgs img {
+  display: inline-block;
+  height: 150px;
+  margin: 20px;
+}
