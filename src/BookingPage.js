@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./BookingPage.css";
 import restaurantImg from "./img/restaurant.jpg";
 import restaurantChefs2Img from "./img/Mario_and_Adrian B.jpg";
+import { Nav } from "./HomePage.js";
+import { Footer } from "./HomePage.js";
 
 export default function BookingPage() {
   const navigate = useNavigate();
@@ -14,6 +16,7 @@ export default function BookingPage() {
 
   return (
     <div>
+      <Nav />
       <div className="bookingpage-imgs">
         <img
           src={restaurantImg}
@@ -73,6 +76,7 @@ export default function BookingPage() {
           value="Make Your reservation"
         />
       </form>
+      <Footer />
     </div>
   );
 }

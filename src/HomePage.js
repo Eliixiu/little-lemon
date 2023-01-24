@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logoImg from "./img/logo.svg";
 import restaurantChefbImg from "./img/restaurant_chefB.jpg";
 import greekSaladImg from "./img/greek_salad.jpg";
@@ -10,14 +10,14 @@ import customer3Img from "./img/customer3.jpg";
 import customer4Img from "./img/customer4.jpg";
 import restaurantChefsImg from "./img/Mario_and_Adrian A.jpg";
 import restaurantFoodImg from "./img/restaurant_food.jpg";
+import "./HomePage.scss";
 
-// import "./HomePage.css";
-import "./HomePageExperiment.scss";
-
-function Nav() {
+export function Nav() {
   return (
     <section className="section-wrapper nav-content">
-      <img src={logoImg} alt="Little Lemon Logo" className="logo" />
+      <Link to="/">
+        <img src={logoImg} alt="Little Lemon Logo" className="logo" />
+      </Link>
       <nav className="nav">
         <ul>
           <li>
@@ -144,7 +144,7 @@ function Main() {
         </div>
       </section>
       <section className="testi-content">
-        <h2 className="section-wrapper testimonials-head">Testimonials</h2>
+        <h2>Testimonials</h2>
         <div className="section-wrapper testimonials-section">
           <TestimonialsItem
             rating="Rating"
@@ -175,7 +175,7 @@ function Main() {
       <section className="section-wrapper restau-background">
         <div>
           <h2>Little Lemon</h2>
-          <p>Chicago</p>
+          <h3>Chicago</h3>
           <p className="muted">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit
             neque quidem omnis blanditiis molestias consequatur earum iste nulla
@@ -208,7 +208,7 @@ function FooterItem(props) {
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="footer-content">
       <div className="section-wrapper footer-container">
@@ -217,19 +217,16 @@ function Footer() {
           alt="A photo of Little Lemon restaurant's food"
         />
         <FooterItem
-          className="footer-nav-container"
-          title="Doormat Navigation"
+          className="section-wrapper footer-nav-item"
+          title="Home"
           list={[
-            { name: "Home" },
-            { name: "About" },
-            { name: "Menu" },
             { name: "Reservation" },
             { name: "Order online" },
             { name: "Login" },
           ]}
         />
         <FooterItem
-          className="footer-nav-container"
+          className="section-wrapper footer-nav-item"
           title="Contact"
           list={[
             { name: "Address" },
@@ -238,8 +235,8 @@ function Footer() {
           ]}
         />
         <FooterItem
-          className="footer-nav-container"
-          title="Social Media Links"
+          className="section-wrapper footer-nav-item"
+          title="Social Media"
           list={[
             { name: "Instagram" },
             { name: "Facebook" },
@@ -247,7 +244,7 @@ function Footer() {
           ]}
         />
       </div>
-      <p className="wrapper copyright">Copyright ©2023 Little Lemon</p>
+      <p className="copyright">Copyright ©2023 Little Lemon</p>
     </footer>
   );
 }
