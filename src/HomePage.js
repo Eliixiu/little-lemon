@@ -21,7 +21,9 @@ export function Nav() {
       <nav className="nav">
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <Link to="/">
+              <a href="#home">Home</a>
+            </Link>
           </li>
           <li>
             <a href="#about">About</a>
@@ -83,7 +85,7 @@ function Header() {
 function MenuItem(props) {
   return (
     <div className="menu-item">
-      <img src={props.img} alt={props.alt} />
+      <img src={props.img} />
       <h3>{props.title}</h3>
       <p className="muted">{props.description}</p>
       <p className="price">${props.price}</p>
@@ -91,10 +93,24 @@ function MenuItem(props) {
   );
 }
 
+function RatingStar(props) {
+  return (
+    <div>
+      {Array(props.numberOfStars)
+        .fill(null)
+        .map((_, i) => (
+          <div key={`Star-${i}`} class="clip-star" />
+        ))}
+    </div>
+  );
+}
+
 function TestimonialsItem(props) {
   return (
     <div className="testimonials-item">
-      <p>{props.rating}</p>
+      <p>
+        <RatingStar numberOfStars={props.numberOfStars} />
+      </p>
       <p>{props.name}</p>
       <img src={props.img} alt={props.alt} />
       <p>{props.text}</p>
@@ -113,7 +129,6 @@ function Main() {
         <div className="section-wrapper menu-items">
           <MenuItem
             img={greekSaladImg}
-            alt=""
             title="Greek Salad"
             description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
                 excepturi cupiditate? A itaque incidunt, quaerat omnis, nihil
@@ -123,7 +138,6 @@ function Main() {
           />
           <MenuItem
             img={bruchettaImg}
-            alt=""
             title="Bruchetta"
             description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
                 excepturi cupiditate? A itaque incidunt, quaerat omnis, nihil
@@ -133,7 +147,6 @@ function Main() {
           />
           <MenuItem
             img={lemonDessertImg}
-            alt=""
             title="Lemon Dessert"
             description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
                 excepturi cupiditate? A itaque incidunt, quaerat omnis, nihil
@@ -147,28 +160,29 @@ function Main() {
         <h2>Testimonials</h2>
         <div className="section-wrapper testimonials-section">
           <TestimonialsItem
-            rating="Rating"
             name="Name"
             img={customer1Img}
             text="Reviewtext"
+            numberOfStars={3}
           />
           <TestimonialsItem
-            rating="Rating"
             name="Name"
             img={customer2Img}
             text="Reviewtext"
+            numberOfStars={4}
           />
           <TestimonialsItem
-            rating="Rating"
             name="Name"
             img={customer3Img}
             text="Reviewtext"
+            numberOfStars={3}
           />
           <TestimonialsItem
             rating="Rating"
             name="Name"
             img={customer4Img}
             text="Reviewtext"
+            numberOfStars={5}
           />
         </div>
       </section>

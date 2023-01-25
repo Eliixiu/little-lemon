@@ -48,7 +48,8 @@ export default function BookingPage() {
           onChange={(e) => setDate(e.target.value)}
         />
         <label htmlFor="res-time">Choose time</label>
-        <select id="res-time " onChange={(e) => setTime(e.target.value)}>
+        <select id="res-time" onChange={(e) => setTime(e.target.value)}>
+          <option></option>
           <option>17:00</option>
           <option>18:00</option>
           <option>19:00</option>
@@ -67,6 +68,7 @@ export default function BookingPage() {
         />
         <label htmlFor="occasion">Occasion</label>
         <select id="occasion" onChange={(e) => setOccasion(e.target.value)}>
+          <option></option>
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>

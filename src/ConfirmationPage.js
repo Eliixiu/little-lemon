@@ -9,7 +9,7 @@ export default function ConfirmationPage() {
   return (
     <div>
       <Nav />
-      <div className="confimation-form">
+      <div className="section-wrapper center">
         <h1>Reservation Confirmed</h1>
         <p>
           Thank you for your reservation at Little Lemon. We look forward to
@@ -19,6 +19,9 @@ export default function ConfirmationPage() {
         <p>Time: {params.get("time")}</p>
         <p>Number of guests: {params.get("numberOfGuests")}</p>
         <p>Occasion: {params.get("occasion")}</p>
+        <button>
+          <Link to="/booking">Back</Link>
+        </button>
         <button>
           <Link to="/">Home</Link>
         </button>

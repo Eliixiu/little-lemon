@@ -4,8 +4,9 @@ body {
   background-color: #edefee;
 }
 
-img {
-  width: 15%;
+.bookingpage-imgs > img {
+  width: 20%;
+  height: auto;
   margin: 1rem;
 }
 
