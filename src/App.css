@@ -8,3 +8,64 @@ body {
 .section-wrapper {
   padding: 2rem 18rem;
 }
+
+@media only screen and (max-width: 1024px) {
+  .section-wrapper {
+    padding: 1rem 2rem;
+  }
+  .nav-content {
+    padding: 0 8px;
+  }
+  .nav > ul {
+    gap: 8px;
+  }
+  .logo {
+    width: 50%;
+  }
+
+  .header-content {
+    font-size: 12px;
+  }
+
+  .header-content h1 {
+    font-size: 2em;
+  }
+
+  .header-content p {
+    padding: 0 1rem 0 0;
+  }
+  .restaurant-chefb {
+    width: 80%;
+  }
+  .menu-items {
+    flex-direction: column;
+  }
+
+  .menu-item img {
+    width: 50%;
+  }
+
+  .testimonials-section {
+    flex-direction: column;
+  }
+
+  .testimonials-item {
+    padding: 0;
+  }
+
+  .testimonials-section img {
+    width: 100%;
+  }
+
+  .restau-background {
+    font-size: 12px;
+  }
+
+  .restau-background p {
+    padding: 0 1rem 0 0;
+  }
+
+  .footer-content {
+    font-size: 12px;
+  }
+}
