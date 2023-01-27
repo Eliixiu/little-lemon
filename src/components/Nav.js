@@ -10,9 +10,7 @@ export function Nav() {
       <nav className="nav">
         <ul>
           <li>
-            <Link to="/">
-              <a href="#home">Home</a>
-            </Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <a href="#about">About</a>

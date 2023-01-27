@@ -4,10 +4,23 @@ import React from "react";
 export function BookingForm() {
   const navigate = useNavigate();
 
+  const [availableTimes, setAvailableTimes] = React.useState(
+    initializeTimes(12, 22)
+  );
   const [date, setDate] = React.useState("");
   const [time, setTime] = React.useState("");
   const [numberOfGuests, setNumberOfGuests] = React.useState("");
   const [occasion, setOccasion] = React.useState("");
+
+  React.useEffect(() => {
+    if (!date) return;
+    const selected = new Date(date);
+    if (isWeekend(selected)) {
+      setAvailableTimes(initializeTimes(10, 24));
+    } else {
+      setAvailableTimes(initializeTimes(12, 22));
+    }
+  }, [date]);
 
   return (
     <form
@@ -30,12 +43,9 @@ export function BookingForm() {
       <label htmlFor="res-time">Choose time</label>
       <select id="res-time" onChange={(e) => setTime(e.target.value)}>
         <option></option>
-        <option>17:00</option>
-        <option>18:00</option>
-        <option>19:00</option>
-        <option>20:00</option>
-        <option>21:00</option>
-        <option>22:00</option>
+        {availableTimes.map((time) => (
+          <option key={time}>{time}:00</option>
+        ))}
       </select>
       <label htmlFor="guests">Number of guests</label>
       <input
@@ -59,4 +69,13 @@ export function BookingForm() {
       />
     </form>
   );
+}
+
+function isWeekend(date) {
+  const day = date.getDay();
+  return day === 0 || day === 6;
+}
+
+function initializeTimes(start, end) {
+  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
