@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import React from "react";
 
-export function BookingForm() {
-  const navigate = useNavigate();
-
+export function BookingForm(props) {
   const [availableTimes, setAvailableTimes] = React.useState(
     fetchAPI(new Date())
   );
@@ -22,15 +19,7 @@ export function BookingForm() {
       className="booking-form"
       onSubmit={(e) => {
         e.preventDefault();
-        const succeeded = submitAPI({ date, time, numberOfGuests, occasion });
-        if (succeeded) {
-          navigate({
-            pathname: "/confirmation",
-            search: `?date=${date}&time=${time}&numberOfGuests=${numberOfGuests}&occasion=${occasion}`,
-          });
-        } else {
-          window.alert("Please try again.");
-        }
+        props.onSubmit({ date, time, numberOfGuests, occasion });
       }}
     >
       <label htmlFor="res-date">Choose date</label>
@@ -58,6 +47,7 @@ export function BookingForm() {
       <label htmlFor="occasion">Occasion</label>
       <select id="occasion" onChange={(e) => setOccasion(e.target.value)}>
         <option></option>
+        <option>None</option>
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
@@ -92,8 +82,4 @@ const fetchAPI = function (date) {
     }
   }
   return result;
-};
-
-const submitAPI = function (formData) {
-  return true;
 };
