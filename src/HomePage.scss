@@ -51,12 +51,11 @@ a {
 
 .nav-content {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 0 18rem;
 
   .nav {
     display: flex;
-    align-items: center;
   }
 
   .nav > ul {
@@ -100,7 +99,7 @@ a {
     gap: 15px;
   }
 
-  .menu-item > img {
+  .menu-item-img {
     width: 100%;
   }
 
@@ -118,28 +117,21 @@ a {
 
   h2 {
     text-align: center;
-    padding: 2rem 0 0 0;
   }
 
   .testimonials-section {
     display: flex;
     justify-content: space-around;
-    padding: 0 18rem 1rem 18rem;
-  }
-
-  .testimonials-item {
     text-align: center;
-    padding: 0 3rem 0 0;
   }
 
-  img {
-    width: 80%;
+  .testimonials-section-img {
+    width: 100%;
   }
 }
 
 .restau-background {
   display: flex;
-  justify-content: center;
 
   h2 {
     color: #495e57;
@@ -150,7 +142,7 @@ a {
     padding: 0 6rem 0 0;
   }
 
-  img {
+  .restaurantchefs-img {
     width: 30%;
   }
 }

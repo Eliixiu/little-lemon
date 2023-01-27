@@ -85,7 +85,7 @@ function Header() {
 function MenuItem(props) {
   return (
     <div className="menu-item">
-      <img src={props.img} />
+      <img src={props.img} className="menu-item-img" />
       <h3>{props.title}</h3>
       <p className="muted">{props.description}</p>
       <p className="price">${props.price}</p>
@@ -112,7 +112,7 @@ function TestimonialsItem(props) {
         <RatingStar numberOfStars={props.numberOfStars} />
       </p>
       <p>{props.name}</p>
-      <img src={props.img} alt={props.alt} />
+      <img src={props.img} className="testimonials-section-img" />
       <p>{props.text}</p>
     </div>
   );
@@ -156,32 +156,32 @@ function Main() {
           />
         </div>
       </section>
-      <section className="testi-content">
+      <section className="section-wrapper testi-content">
         <h2>Testimonials</h2>
-        <div className="section-wrapper testimonials-section">
+        <div className="testimonials-section">
           <TestimonialsItem
             name="Name"
             img={customer1Img}
-            text="Reviewtext"
+            text="Review text"
             numberOfStars={3}
           />
           <TestimonialsItem
             name="Name"
             img={customer2Img}
-            text="Reviewtext"
+            text="Review text"
             numberOfStars={4}
           />
           <TestimonialsItem
             name="Name"
             img={customer3Img}
-            text="Reviewtext"
+            text="Review text"
             numberOfStars={3}
           />
           <TestimonialsItem
             rating="Rating"
             name="Name"
             img={customer4Img}
-            text="Reviewtext"
+            text="Review text"
             numberOfStars={5}
           />
         </div>
@@ -229,6 +229,7 @@ export function Footer() {
         <img
           src={restaurantFoodImg}
           alt="A photo of Little Lemon restaurant's food"
+          className="footer-img"
         />
         <FooterItem
           className="section-wrapper footer-nav-item"

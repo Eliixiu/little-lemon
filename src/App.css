@@ -6,25 +6,12 @@ body {
 }
 
 .section-wrapper {
-  padding: 2rem 18rem;
+  padding: 1.5rem 15rem;
 }
 
 @media only screen and (max-width: 1024px) {
   .section-wrapper {
     padding: 1rem 2rem;
-  }
-  .nav-content {
-    padding: 0 8px;
-  }
-  .nav > ul {
-    gap: 8px;
-  }
-  .logo {
-    width: 50%;
-  }
-
-  .header-content {
-    font-size: 12px;
   }
 
   .header-content h1 {
@@ -33,39 +20,38 @@ body {
 
   .header-content p {
     padding: 0 1rem 0 0;
+    font-size: 0.5em;
   }
-  .restaurant-chefb {
-    width: 80%;
-  }
+
   .menu-items {
     flex-direction: column;
   }
 
-  .menu-item img {
-    width: 50%;
+  .menu-item-img {
+    object-fit: contain;
   }
 
   .testimonials-section {
     flex-direction: column;
   }
 
-  .testimonials-item {
-    padding: 0;
-  }
-
-  .testimonials-section img {
-    width: 100%;
-  }
-
-  .restau-background {
-    font-size: 12px;
+  .testimonials-section-img {
+    flex-direction: column;
   }
 
   .restau-background p {
     padding: 0 1rem 0 0;
   }
 
+  .restaurantchefs-img {
+    object-fit: contain;
+  }
+
   .footer-content {
     font-size: 12px;
+  }
+
+  .footer-img {
+    object-fit: contain;
   }
 }
