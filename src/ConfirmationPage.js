@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
+import { Nav } from "./components/Nav";
 import "./ConfirmationPage.css";
-import { Nav } from "./HomePage.js";
 
 export default function ConfirmationPage() {
   const search = useLocation().search;

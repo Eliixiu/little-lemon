@@ -1,5 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import logoImg from "./img/logo.svg";
+import { useNavigate } from "react-router-dom";
 import restaurantChefbImg from "./img/restaurant_chefB.jpg";
 import greekSaladImg from "./img/greek_salad.jpg";
 import bruchettaImg from "./img/bruchetta.jpg";
@@ -9,42 +8,9 @@ import customer2Img from "./img/customer2.jpg";
 import customer3Img from "./img/customer3.jpg";
 import customer4Img from "./img/customer4.jpg";
 import restaurantChefsImg from "./img/Mario_and_Adrian A.jpg";
-import restaurantFoodImg from "./img/restaurant_food.jpg";
 import "./HomePage.scss";
-
-export function Nav() {
-  return (
-    <section className="section-wrapper nav-content">
-      <Link to="/">
-        <img src={logoImg} alt="Little Lemon Logo" className="logo" />
-      </Link>
-      <nav className="nav">
-        <ul>
-          <li>
-            <Link to="/">
-              <a href="#home">Home</a>
-            </Link>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#menu">Menu</a>
-          </li>
-          <li>
-            <a href="#reservations">Reservation</a>
-          </li>
-          <li>
-            <a href="#orderonline">Order online</a>
-          </li>
-          <li>
-            <a href="#login">Login</a>
-          </li>
-        </ul>
-      </nav>
-    </section>
-  );
-}
+import { Footer } from "./components/Footer";
+import { Nav } from "./components/Nav";
 
 function Header() {
   const navigate = useNavigate();
@@ -204,63 +170,6 @@ function Main() {
         />
       </section>
     </main>
-  );
-}
-
-function FooterItem(props) {
-  return (
-    <div>
-      <p>{props.title}</p>
-      <ul>
-        {props.list.map((listItem) => (
-          <li key={listItem.name}>
-            <a href="/">{listItem.name}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export function Footer() {
-  return (
-    <footer className="footer-content">
-      <div className="section-wrapper footer-container">
-        <img
-          src={restaurantFoodImg}
-          alt="A photo of Little Lemon restaurant's food"
-          className="footer-img"
-        />
-        <FooterItem
-          className="section-wrapper footer-nav-item"
-          title="Home"
-          list={[
-            { name: "Reservation" },
-            { name: "Order online" },
-            { name: "Login" },
-          ]}
-        />
-        <FooterItem
-          className="section-wrapper footer-nav-item"
-          title="Contact"
-          list={[
-            { name: "Address" },
-            { name: "Phone Number" },
-            { name: "Email" },
-          ]}
-        />
-        <FooterItem
-          className="section-wrapper footer-nav-item"
-          title="Social Media"
-          list={[
-            { name: "Instagram" },
-            { name: "Facebook" },
-            { name: "Twitter" },
-          ]}
-        />
-      </div>
-      <p className="copyright">Copyright ©2023 Little Lemon</p>
-    </footer>
   );
 }
 
