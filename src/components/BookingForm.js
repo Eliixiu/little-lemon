@@ -5,7 +5,7 @@ export function BookingForm() {
   const navigate = useNavigate();
 
   const [availableTimes, setAvailableTimes] = React.useState(
-    initializeTimes(12, 22)
+    fetchAPI(new Date())
   );
   const [date, setDate] = React.useState("");
   const [time, setTime] = React.useState("");
@@ -14,12 +14,7 @@ export function BookingForm() {
 
   React.useEffect(() => {
     if (!date) return;
-    const selected = new Date(date);
-    if (isWeekend(selected)) {
-      setAvailableTimes(initializeTimes(10, 24));
-    } else {
-      setAvailableTimes(initializeTimes(12, 22));
-    }
+    setAvailableTimes(fetchAPI(new Date(date)));
   }, [date]);
 
   return (
@@ -27,11 +22,15 @@ export function BookingForm() {
       className="booking-form"
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(date, time, numberOfGuests, occasion);
-        navigate({
-          pathname: "/confirmation",
-          search: `?date=${date}&time=${time}&numberOfGuests=${numberOfGuests}&occasion=${occasion}`,
-        });
+        const succeeded = submitAPI({ date, time, numberOfGuests, occasion });
+        if (succeeded) {
+          navigate({
+            pathname: "/confirmation",
+            search: `?date=${date}&time=${time}&numberOfGuests=${numberOfGuests}&occasion=${occasion}`,
+          });
+        } else {
+          window.alert("Please try again.");
+        }
       }}
     >
       <label htmlFor="res-date">Choose date</label>
@@ -71,11 +70,30 @@ export function BookingForm() {
   );
 }
 
-function isWeekend(date) {
-  const day = date.getDay();
-  return day === 0 || day === 6;
-}
+const seededRandom = function (seed) {
+  var m = 2 ** 35 - 31;
+  var a = 185852;
+  var s = seed % m;
+  return function () {
+    return (s = (s * a) % m) / m;
+  };
+};
 
-function initializeTimes(start, end) {
-  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-}
+const fetchAPI = function (date) {
+  let result = [];
+  let random = seededRandom(date.getDate());
+
+  for (let i = 17; i <= 23; i++) {
+    if (random() < 0.5) {
+      result.push(i + ":00");
+    }
+    if (random() < 0.5) {
+      result.push(i + ":30");
+    }
+  }
+  return result;
+};
+
+const submitAPI = function (formData) {
+  return true;
+};
