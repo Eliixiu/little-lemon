@@ -16,6 +16,7 @@ export function BookingForm(props) {
 
   return (
     <form
+      role="booking"
       className="booking-form"
       onSubmit={(e) => {
         e.preventDefault();
